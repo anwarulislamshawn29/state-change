@@ -1,0 +1,13 @@
+.box {
+
+  width: 100px;
+  border: 1px solid black;
+  padding: 40px;
+  margin-left: 2px;
+  text-align: center;
+}
+
+.main {
+  display: inline-block;
+
+}
