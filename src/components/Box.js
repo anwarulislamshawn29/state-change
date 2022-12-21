@@ -1,17 +1,18 @@
 import { useState } from 'react'
 export default function Box(props) {
 
-     const [on, setOn] = useState(props.on)
-     function toggle() {
-          setOn(prevOn => !prevOn)
+     const styles = {
+          backgroundColor: props.on ? 'red' : 'transparent',
+          color: props.on ? 'white': '#222222'
      }
-     const style = {
-          backgroundColor: on ? 'red' : 'transparent',
-          color: on ? 'white': '#222222'
-     }
+ 
      return (
           <div className='main'>
-          <div style={style} className="box" onClick={toggle}>STATE CHANGE</div>
+               <div style={styles} 
+                    className="box" 
+                    onClick={()=>props.toggle(props.id)}
+                    >STATE CHANGE
+               </div>
           </div>
      )
 }
