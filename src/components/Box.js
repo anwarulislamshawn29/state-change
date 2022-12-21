@@ -1,4 +1,3 @@
-import { useState } from 'react'
 export default function Box(props) {
 
      const styles = {
@@ -10,7 +9,7 @@ export default function Box(props) {
           <div className='main'>
                <div style={styles} 
                     className="box" 
-                    onClick={()=>props.toggle(props.id)}
+                    onClick={(props.toggle)}
                     >STATE CHANGE
                </div>
           </div>
