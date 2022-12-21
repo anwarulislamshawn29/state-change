@@ -5,31 +5,20 @@ import Box from './components/Box'
 
 export default function App() {
 
-  const [squeres, setSqueres] = React.useState(allData)
+  const [squares, setSqueres] = React.useState(allData)
   function toggle(id) {
-    setSqueres(previousSquers => {
-      const newSqueresArr = []
-      previousSquers.forEach(arr => {
-        const currentSqueres = arr
-        if (currentSqueres.id === id) {
-          const updatedSquere = {
-            ...currentSqueres,
-            on: !currentSqueres.on
-          }
-          newSqueresArr.push(updatedSquere)
-        } else {
-          newSqueresArr.push(currentSqueres)
-        }
-      })
-      return newSqueresArr
+    setSqueres(previousSquares => {
+   return previousSquares.map((square) => {
+     return square.id === id ? {...square, on: !square.on} : square
+   })
     })
   }
 
-  const elements = squeres.map(squere => (
+  const elements = squares.map(square => (
     <Box
-      key={squere.id}
-      id={squere.id}
-      on={squere.on}
+      key={square.id}
+      id={square.id}
+      on={square.on}
       toggle={toggle}
     />
   ))
